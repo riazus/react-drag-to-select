@@ -94,11 +94,11 @@ export function useSelectionLogic<T extends HTMLElement>({
   const getOffset = useCallback((): Point => {
     const eventsElementRect = eventsElement?.getBoundingClientRect();
     const bodyRect = document.body?.getBoundingClientRect();
-    return { 
-      x: (eventsElementRect?.left || 0) - (bodyRect?.left || 0),
-      y: (eventsElementRect?.top || 0) - (bodyRect?.top || 0),
+    return {
+      x: (eventsElementRect?.left ?? 0) - (bodyRect?.left || 0),
+      y: (eventsElementRect?.top ?? 0) - (bodyRect?.top || 0),
     };
-  }, [])
+  }, []);
 
   /**
    * method to calculate point from event in context of the whole screen
@@ -107,7 +107,7 @@ export function useSelectionLogic<T extends HTMLElement>({
     (event: MouseEvent): Point => {
       const rect = containerRef.current?.getParentBoundingClientRect();
       const offset = getOffset();
-  
+
       return {
         x: offset.x + event.clientX - (typeof rect?.left === 'number' ? rect.left : 0),
         y: offset.y + event.clientY - (typeof rect?.top === 'number' ? rect.top : 0),

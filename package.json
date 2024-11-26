@@ -1,11 +1,11 @@
 {
-  "name": "@air/react-drag-to-select",
-  "version": "5.0.10",
+  "name": "@riazus/react-drag-to-select",
+  "version": "1.0.0",
   "description": "A performant React library which adds drag to select to your app",
   "type": "module",
-  "author": "Air Labs, Inc.",
+  "author": "riazus",
   "license": "MIT",
-  "repository": "AirLabsTeam/react-drag-to-select",
+  "repository": "riazus/react-drag-to-select",
   "source": "src/index.ts",
   "exports": {
     "require": "./dist/index.cjs",
@@ -50,5 +50,6 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
